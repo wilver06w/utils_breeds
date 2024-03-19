@@ -461,7 +461,7 @@ class XigoTextMedium extends StatelessWidget {
   /// ```
   const XigoTextMedium(
     this.label, {
-    Key? key,
+    super.key,
     this.textAlign,
     this.weight,
     this.color,
@@ -470,7 +470,7 @@ class XigoTextMedium extends StatelessWidget {
     this.maxLines,
     this.decoration,
     this.shadows,
-  }) : super(key: key);
+  });
 
   final String label;
   final TextAlign? textAlign;

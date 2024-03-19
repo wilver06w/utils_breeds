@@ -27,7 +27,9 @@ dependencies:
   collection: ^1.18.0
   equatable: ^2.0.5
   models_breeds:
-    path: ../models_breeds
+    git:
+      url: https://github.com/wilver06w/models_breeds.git
+      ref: main
   l10n_breeds:
     git:
       url: https://github.com/wilver06w/l10n_breeds.git

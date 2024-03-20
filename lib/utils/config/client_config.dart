@@ -40,13 +40,10 @@ class AppConfig {
 
   static AppConfig? _singleton;
 
-  final bool isProd = (const bool.fromEnvironment('dart.vm.product'));
   void Function(Country)? onUpdateCountry;
   late final AppConfigBloc blocProvider;
   String ip = '';
   late Country _country;
-  Module? module;
-  final navigatorKey = GlobalKey<NavigatorState>();
   String version = '0';
 
   final Map<String, dynamic> config;

@@ -4,7 +4,7 @@ import 'package:lottie/lottie.dart';
 import 'package:utils_breeds/utils/constant/responsive.dart';
 import 'package:utils_breeds/utils/constant/spacing.dart';
 
-class YuGiOhLoading {
+class BreedLoading {
   static void show(
     BuildContext context, {
     bool useRootNavigator = false,

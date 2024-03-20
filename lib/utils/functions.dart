@@ -3,15 +3,6 @@ import 'package:share_me/share_me.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Functions {
-  static Future<void> launchInBrowser({required String url}) async {
-    if (!await launchUrl(
-      Uri.parse(url),
-      mode: LaunchMode.externalApplication,
-    )) {
-      throw Exception('Could not launch $url');
-    }
-  }
-
   static Future<void> sharedBreedInfo({required String url}) async {
     ShareMe.system(
       title: 'Conoce sobre esta Raza de Gato',

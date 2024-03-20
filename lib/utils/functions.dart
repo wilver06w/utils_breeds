@@ -1,6 +1,5 @@
 import 'package:models_breeds/app/models/breed.dart';
 import 'package:share_me/share_me.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Functions {
   static Future<void> sharedBreedInfo({required String url}) async {

@@ -1,7 +1,5 @@
 library mobile_client_config;
 
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:l10n_breeds/generated/l10n.dart';
 import 'package:models_breeds/app/models/countries.dart';
@@ -9,7 +7,6 @@ import 'package:models_breeds/app/models/country/country.dart';
 import 'package:network_breeds/app/network/http_client.dart';
 import 'package:utils_breeds/utils/config/bloc/bloc.dart';
 import 'package:utils_breeds/utils/config/environment.dart';
-import 'package:utils_breeds/utils/config/main/bloc/bloc.dart';
 
 class AppConfig {
   factory AppConfig({
@@ -33,15 +30,6 @@ class AppConfig {
     onUpdateCountry = uc;
     blocProvider = AppConfigBloc(countries.first);
 
-    _mxDefaultDocument = config['mx_default_document'] ?? '';
-    _mxDefaultUuid = config['mx_default_uuid'] ?? '';
-    _uxCamKey = config['ux_cam_key'] ?? '';
-
-    _segmentKey = Platform.isIOS
-        ? (config['segment_key_ios'] ?? '')
-        : (config['segment_key_android'] ?? '');
-    _sentryKey = config['sentry_key'] ?? '';
-
     _country = countries.firstWhere(
       (c) => c.code == 'CO',
       orElse: () => countries.first,
@@ -54,37 +42,15 @@ class AppConfig {
 
   final bool isProd = (const bool.fromEnvironment('dart.vm.product'));
   void Function(Country)? onUpdateCountry;
-  String appType = 'b2b';
   late final AppConfigBloc blocProvider;
 
-  String? cellphoneProvisional;
   late Country _country;
-  bool hasActiveOrders = false;
-  bool hasAddress = false;
-  String ip = '';
   Module? module;
   final navigatorKey = GlobalKey<NavigatorState>();
   String version = '0';
-  String warehouseUuid = '';
-  String _mxDefaultDocument = '';
-  String _mxDefaultUuid = '';
-  String _uxCamKey = '';
-  String _segmentKey = '';
-  String _sentryKey = '';
-  String marketingZone = '';
 
   final Map<String, dynamic> config;
   final Environment environment;
-
-  String get mxDefaultDocument => _mxDefaultDocument;
-
-  String get mxDefaultUuid => _mxDefaultUuid;
-
-  String get uxCamKey => _uxCamKey;
-
-  String get segmentKey => _segmentKey;
-
-  String get sentryKey => _sentryKey;
 
   Country get country => _country;
 
@@ -118,21 +84,5 @@ class AppConfig {
   void clear() async {
     _configure();
     country = countries.first;
-    warehouseUuid = '';
-    ip = '';
-    marketingZone = '';
-  }
-
-  Future<void> logout() async {
-    clear();
-    Modular.to.pushNamedAndRemoveUntil('/', (_) => false);
-
-    Modular.get<Bloc>().add(ChangeKeyEvent());
-  }
-
-  Future<void> reOpenApp() async {
-    Modular.to.pushNamedAndRemoveUntil('/', (_) => false);
-
-    Modular.get<Bloc>().add(ChangeKeyEvent());
   }
 }

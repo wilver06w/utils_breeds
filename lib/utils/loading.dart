@@ -17,7 +17,7 @@ class YuGiOhLoading {
         return PopScope(
           canPop: false,
           child: Lottie.asset(
-            BreedUiValues.loadingAnimations,
+            BreedUiValues.catSplashAnimation,
             height: BreedResponsive.heightSizeByContext(
               context,
               pixels: BreedSpacing.xs,

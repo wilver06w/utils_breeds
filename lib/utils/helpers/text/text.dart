@@ -496,7 +496,7 @@ class _TextGeneric extends StatelessWidget {
   const _TextGeneric({
     required this.label,
     required this.fontSize,
-    Key? key,
+    super.key,
     this.color,
     this.fontStyle,
     this.fontWeight,
@@ -508,7 +508,7 @@ class _TextGeneric extends StatelessWidget {
     this.decoration,
     this.fontFamily,
     this.shadows,
-  }) : super(key: key);
+  });
 
   final String label;
   final double fontSize;

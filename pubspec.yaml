@@ -15,6 +15,7 @@ dependencies:
   intl: ^0.18.1
   url_launcher: ^6.2.2
   dartz: ^0.10.1
+  bloc: ^8.1.3
   flutter_bloc: ^8.1.3
   flutter_modular: ^5.0.3
   lottie: ^2.7.0
@@ -26,6 +27,7 @@ dependencies:
   shared_preferences: ^2.2.2
   collection: ^1.18.0
   equatable: ^2.0.5
+  share_me: ^0.0.17
 
   models_breeds:
     path: ../models_breeds
@@ -33,6 +35,7 @@ dependencies:
     path: ../l10n_breeds
   network_breeds:
     path: ../network_breeds
+  meta: ^1.11.0
   # models_breeds:
   #   git:
   #     url: https://github.com/wilver06w/models_breeds.git

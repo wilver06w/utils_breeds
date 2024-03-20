@@ -1,4 +1,5 @@
-import 'package:models_breeds/app/models/list_yugioh.dart';
+import 'package:models_breeds/app/models/breed.dart';
+import 'package:share_me/share_me.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Functions {
@@ -11,32 +12,26 @@ class Functions {
     }
   }
 
-  static List<YuGiOh> getListWithOutBan({
-    required List<YuGiOh> listYuGiOhActually,
-    required List<int> listYuGiOhBan,
-  }) {
-    List<YuGiOh> listYuGi = [];
-
-    for (YuGiOh elementItem in listYuGiOhActually) {
-      if (!listYuGiOhBan.contains(elementItem.id)) {
-        listYuGi.add(elementItem);
-      }
-    }
-    return listYuGi;
+  static Future<void> sharedBreedInfo({required String url}) async {
+    ShareMe.system(
+      title: 'Conoce sobre esta Raza de Gato',
+      description:
+          '¡Hola Broo! Quiero compartir contigo esta informacion, leela aqui:',
+      url: url,
+    );
   }
 
-  static List<String> moths = [
-    "enero",
-    "febrero",
-    "marzo",
-    "abril",
-    "mayo",
-    "junio",
-    "julio",
-    "agosto",
-    "septiembre",
-    "octubre",
-    "noviembre",
-    "diciembre",
-  ];
+  static List<Breed> getListFilter({
+    required List<Breed> listBreed,
+    required String search,
+  }) {
+    final listFilter = listBreed
+        .where(
+          (element) =>
+              element.name.toUpperCase().contains(search.toUpperCase()) ||
+              element.description.toUpperCase().contains(search.toUpperCase()),
+        )
+        .toList();
+    return listFilter;
+  }
 }

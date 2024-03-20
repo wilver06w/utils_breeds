@@ -1,10 +1,3 @@
-// ████████╗██╗░░░██╗██╗░░░░░  ████████╗███████╗██╗░░██╗████████╗
-// ╚══██╔══╝██║░░░██║██║░░░░░  ╚══██╔══╝██╔════╝╚██╗██╔╝╚══██╔══╝
-// ░░░██║░░░██║░░░██║██║░░░░░  ░░░██║░░░█████╗░░░╚███╔╝░░░░██║░░░
-// ░░░██║░░░██║░░░██║██║░░░░░  ░░░██║░░░██╔══╝░░░██╔██╗░░░░██║░░░
-// ░░░██║░░░╚██████╔╝███████╗  ░░░██║░░░███████╗██╔╝╚██╗░░░██║░░░
-// ░░░╚═╝░░░░╚═════╝░╚══════╝  ░░░╚═╝░░░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░
-
 part of 'text.dart';
 
 class XigoTextRich extends StatelessWidget {
@@ -175,7 +168,7 @@ class XigoTextHeading3 extends StatelessWidget {
 
   const XigoTextHeading3(
     this.label, {
-    Key? key,
+    super.key,
     this.textAlign,
     this.weight,
     this.color,
@@ -184,7 +177,7 @@ class XigoTextHeading3 extends StatelessWidget {
     this.maxLines,
     this.decoration,
     this.shadows,
-  }) : super(key: key);
+  });
 
   final String label;
   final TextAlign? textAlign;
@@ -222,7 +215,7 @@ class XigoTextHeading4 extends StatelessWidget {
 
   const XigoTextHeading4(
     this.label, {
-    Key? key,
+    super.key,
     this.textAlign,
     this.weight,
     this.color,
@@ -231,7 +224,7 @@ class XigoTextHeading4 extends StatelessWidget {
     this.maxLines,
     this.decoration,
     this.shadows,
-  }) : super(key: key);
+  });
 
   final String label;
   final TextAlign? textAlign;
@@ -269,7 +262,7 @@ class XigoTextHeading5 extends StatelessWidget {
 
   const XigoTextHeading5(
     this.label, {
-    Key? key,
+    super.key,
     this.textAlign,
     this.weight,
     this.color,
@@ -278,7 +271,7 @@ class XigoTextHeading5 extends StatelessWidget {
     this.maxLines,
     this.decoration,
     this.shadows,
-  }) : super(key: key);
+  });
 
   final String label;
   final TextAlign? textAlign;
@@ -316,7 +309,7 @@ class XigoTextHeading6 extends StatelessWidget {
 
   const XigoTextHeading6(
     this.label, {
-    Key? key,
+    super.key,
     this.textAlign,
     this.weight,
     this.color,
@@ -325,7 +318,7 @@ class XigoTextHeading6 extends StatelessWidget {
     this.maxLines,
     this.decoration,
     this.shadows,
-  }) : super(key: key);
+  });
 
   final String label;
   final TextAlign? textAlign;
@@ -513,7 +506,7 @@ class XigoTextSmall extends StatelessWidget {
   /// ```
   const XigoTextSmall(
     this.label, {
-    Key? key,
+    super.key,
     this.textAlign,
     this.weight,
     this.color,
@@ -522,7 +515,7 @@ class XigoTextSmall extends StatelessWidget {
     this.maxLines,
     this.decoration,
     this.shadows,
-  }) : super(key: key);
+  });
 
   final String label;
   final TextAlign? textAlign;
@@ -565,7 +558,7 @@ class XigoTextCaptionS extends StatelessWidget {
   /// ```
   const XigoTextCaptionS(
     this.label, {
-    Key? key,
+    super.key,
     this.textAlign,
     this.weight,
     this.color,
@@ -574,7 +567,7 @@ class XigoTextCaptionS extends StatelessWidget {
     this.maxLines,
     this.decoration,
     this.shadows,
-  }) : super(key: key);
+  });
 
   final String label;
   final TextAlign? textAlign;
@@ -668,7 +661,7 @@ class XigoTextNumberL extends StatelessWidget {
   /// ```
   const XigoTextNumberL(
     this.label, {
-    Key? key,
+    super.key,
     this.textAlign,
     this.weight,
     this.color,
@@ -676,7 +669,7 @@ class XigoTextNumberL extends StatelessWidget {
     this.letterSpacing,
     this.maxLines,
     this.decoration,
-  }) : super(key: key);
+  });
 
   final String label;
   final TextAlign? textAlign;
@@ -718,7 +711,7 @@ class XigoTextNumberM extends StatelessWidget {
   /// ```
   const XigoTextNumberM(
     this.label, {
-    Key? key,
+    super.key,
     this.textAlign,
     this.weight,
     this.color,
@@ -726,7 +719,7 @@ class XigoTextNumberM extends StatelessWidget {
     this.letterSpacing,
     this.maxLines,
     this.decoration,
-  }) : super(key: key);
+  });
 
   final String label;
   final TextAlign? textAlign;
@@ -768,7 +761,7 @@ class XigoTextNumberS extends StatelessWidget {
   /// ```
   const XigoTextNumberS(
     this.label, {
-    Key? key,
+    super.key,
     this.textAlign,
     this.weight,
     this.color,
@@ -776,7 +769,7 @@ class XigoTextNumberS extends StatelessWidget {
     this.letterSpacing,
     this.maxLines,
     this.decoration,
-  }) : super(key: key);
+  });
 
   final String label;
   final TextAlign? textAlign;
@@ -813,7 +806,7 @@ class XigoTextCustom extends StatelessWidget {
 
   const XigoTextCustom(
     this.label, {
-    Key? key,
+    super.key,
     required this.fontSize,
     this.textAlign,
     this.weight,
@@ -825,7 +818,7 @@ class XigoTextCustom extends StatelessWidget {
     this.fontStyle,
     this.shadows,
     this.fontFamily,
-  }) : super(key: key);
+  });
 
   final String label;
   final TextAlign? textAlign;

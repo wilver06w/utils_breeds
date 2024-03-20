@@ -1,8 +1,5 @@
 library mobile_client_preferences;
 
-import 'dart:convert';
-
-import 'package:models_breeds/app/models/token.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Preferences {
@@ -35,28 +32,6 @@ class Preferences {
   String get token => _prefs?.getString(_tokenKey) ?? '';
   set token(String value) => _prefs?.setString(_tokenKey, value);
 
-  final String _msTokenKey = 'msToken';
-  Token? get msToken {
-    final value = _prefs?.getString(_msTokenKey);
-
-    if (value != null) {
-      final tokenData = json.decode(value);
-      final token = Token.fromJson(tokenData);
-
-      return token;
-    }
-
-    return null;
-  }
-
-  set msToken(Token? value) {
-    final token = json.encode(value?.toJson() ?? {});
-
-    _prefs?.setString(_msTokenKey, token);
-
-    return;
-  }
-
   final String _isLoggedKey = 'is_logged';
   bool get isLogged => _prefs?.getBool(_isLoggedKey) ?? false;
   set isLogged(bool value) => _prefs?.setBool(_isLoggedKey, value);
@@ -68,7 +43,6 @@ class Preferences {
   Future<void> clear() async {
     await _prefs?.clear();
     token = '';
-    msToken = null;
     country = '';
     isLogged = false;
   }

@@ -20,11 +20,11 @@ class YuGiOhLoading {
             BreedUiValues.catSplashAnimation,
             height: BreedResponsive.heightSizeByContext(
               context,
-              pixels: BreedSpacing.xs,
+              pixels: BreedSpacing.xxs,
             ),
             width: BreedResponsive.withSizeByContext(
               context,
-              pixels: BreedSpacing.xs,
+              pixels: BreedSpacing.xxs,
             ),
           ),
         );

@@ -13,37 +13,11 @@ class ProTiendasRoute {
     return Modular.to.pushNamed('/cart/');
   }
 
-  static Future<Object?> navCartResum() async {
-    return Modular.to.pushNamed('/cart/resum');
-  }
-
   static Future<Object?> navLogin() async {
     return Modular.to.pushNamedAndRemoveUntil(
       '/auth/',
       (_) => false,
     );
-  }
-
-  static Future<Object?> navAddresses() async {
-    return Modular.to.pushNamed('/address/');
-  }
-
-  static Future<Object?> navPayment() async {
-    return Modular.to.pushNamed('/payment/');
-  }
-
-  static Future<Object?> navAddPayment() async {
-    return Modular.to.pushNamed('/payment/add');
-  }
-
-  static Future<Object?> navAddAddress() async {
-    return Modular.to.pushNamed(
-      '/address/add',
-    );
-  }
-
-  static Future<Object?> navRegister() async {
-    return Modular.to.pushNamed('/auth/register');
   }
 
   static Future<Object?> navDetail({
@@ -65,7 +39,7 @@ class DetailParams {
   final String image;
 
   DetailParams({
-     this.breed,
+    this.breed,
     required this.id,
     required this.name,
     required this.image,

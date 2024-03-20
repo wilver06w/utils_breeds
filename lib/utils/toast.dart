@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:oktoast/oktoast.dart';
 import 'package:utils_breeds/utils/constant/colors.dart';
-import 'package:utils_breeds/utils/helpers/text/text.dart';
+import 'package:utils_breeds/utils/helpers/text/xigo_text.dart';
 
 class ProTToast {
   static void close() => dismissAllToast(showAnim: true);
@@ -270,9 +270,9 @@ class ProTToast {
                     Row(
                       children: [
                         Expanded(
-                          child: XigoText.fontSizeCustom(
-                            label: title,
-                            fontWeight: FontWeight.w400,
+                          child: XigoTextCustom(
+                            title,
+                            weight: FontWeight.w400,
                             color: ProTiendasUiColors.white,
                             fontSize: fontSize,
                             letterSpacing: -0.6,
@@ -292,9 +292,9 @@ class ProTToast {
                         padding: const EdgeInsets.only(
                           top: 7.0,
                         ),
-                        child: XigoText.labelText(
-                          label: description,
-                          fontWeight: FontWeight.w400,
+                        child: XigoTextLarge(
+                          description,
+                          weight: FontWeight.w400,
                           color: Colors.white,
                           letterSpacing: -0.6,
                         ),

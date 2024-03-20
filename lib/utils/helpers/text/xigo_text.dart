@@ -1,74 +1,6 @@
-part of 'text.dart';
-
-class XigoTextRich extends StatelessWidget {
-  /// Creates a Rich text widget.
-  ///
-  /// the default size of this widget is 12
-  /// fontSize must be ```XigoTypography as int```
-  /// fontFamily must be ```XigoTypography as String```
-  ///
-
-  const XigoTextRich(
-    this.label, {
-    super.key,
-    this.textAlign,
-    this.textOverflow,
-    this.maxLines,
-    this.tags,
-    this.style,
-  });
-
-  final String label;
-  final TextAlign? textAlign;
-  final TextOverflow? textOverflow;
-  final int? maxLines;
-  final List<XigoRichTag>? tags;
-  final TextStyle? style;
-
-  @override
-  Widget build(BuildContext context) {
-    String localLabel = label;
-
-    for (XigoRichTag item in tags ?? []) {
-      final tag = _generateTag(6);
-      localLabel = localLabel.replaceAll(
-        item.tag,
-        '<$tag>${item.tag}</$tag>',
-      );
-      item.tag = tag;
-    }
-
-    return StyledText(
-      text: localLabel,
-      tags: {
-        for (XigoRichTag item in tags ?? [])
-          item.tag: StyledTextActionTag(
-            (_, __) => (item.onTap != null) ? item.onTap!() : null,
-            style: item.style,
-          )
-      },
-      textAlign: textAlign,
-      style: const TextStyle(
-        package: 'mobile_tds',
-        fontStyle: FontStyle.normal,
-        fontFamily: XigoTypography.inter,
-        color: ProTiendasUiColors.raisinBlack,
-        fontSize: XigoTypography.captionSmall,
-      ).merge(style),
-      overflow: textOverflow,
-      maxLines: maxLines,
-    );
-  }
-
-  String _generateTag(int len) {
-    final random = Random();
-    final result = String.fromCharCodes(
-      List.generate(len, (index) => random.nextInt(33) + 89),
-    );
-
-    return result;
-  }
-}
+import 'package:flutter/material.dart';
+import 'package:utils_breeds/utils/constant/colors.dart';
+import 'package:utils_breeds/utils/helpers/text/typography.dart';
 
 class XigoTextHeading1 extends StatelessWidget {
   /// Creates a Xigoio heading text widget.
@@ -411,6 +343,7 @@ class XigoTextLarge extends StatelessWidget {
     this.maxLines,
     this.decoration,
     this.shadows,
+    this.fontStyle,
   });
 
   final String label;
@@ -422,6 +355,7 @@ class XigoTextLarge extends StatelessWidget {
   final int? maxLines;
   final TextDecoration? decoration;
   final List<Shadow>? shadows;
+  final FontStyle? fontStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -430,7 +364,7 @@ class XigoTextLarge extends StatelessWidget {
       label: label,
       fontSize: XigoTypography.large,
       color: color ?? ProTiendasUiColors.raisinBlack,
-      fontStyle: FontStyle.normal,
+      fontStyle: fontStyle ?? FontStyle.normal,
       fontWeight: weight ?? FontWeight.w400,
       textAlign: textAlign,
       textOverflow: textOverflow,
@@ -818,6 +752,7 @@ class XigoTextCustom extends StatelessWidget {
     this.fontStyle,
     this.shadows,
     this.fontFamily,
+    this.textStyle,
   });
 
   final String label;
@@ -830,6 +765,7 @@ class XigoTextCustom extends StatelessWidget {
   final TextDecoration? decoration;
   final double fontSize;
   final FontStyle? fontStyle;
+  final TextStyle? textStyle;
   final List<Shadow>? shadows;
   final String? fontFamily;
 
@@ -841,6 +777,7 @@ class XigoTextCustom extends StatelessWidget {
       fontSize: fontSize,
       color: color ?? ProTiendasUiColors.raisinBlack,
       fontStyle: fontStyle ?? FontStyle.normal,
+      textStyle: textStyle,
       fontWeight: weight ?? FontWeight.w600,
       textAlign: textAlign,
       textOverflow: textOverflow,
@@ -849,6 +786,59 @@ class XigoTextCustom extends StatelessWidget {
       fontFamily: fontFamily,
       decoration: decoration,
       shadows: shadows,
+    );
+  }
+}
+
+class _TextGeneric extends StatelessWidget {
+  const _TextGeneric({
+    required this.label,
+    required this.fontSize,
+    super.key,
+    this.color,
+    this.fontStyle,
+    this.fontWeight,
+    this.textOverflow,
+    this.textAlign,
+    this.letterSpacing,
+    this.maxLines,
+    this.textStyle,
+    this.decoration,
+    this.fontFamily,
+    this.shadows,
+  });
+
+  final String label;
+  final double fontSize;
+  final TextOverflow? textOverflow;
+  final Color? color;
+  final FontWeight? fontWeight;
+  final FontStyle? fontStyle;
+  final TextAlign? textAlign;
+  final double? letterSpacing;
+  final int? maxLines;
+  final TextStyle? textStyle;
+  final TextDecoration? decoration;
+  final String? fontFamily;
+  final List<Shadow>? shadows;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      label,
+      textAlign: textAlign,
+      maxLines: maxLines,
+      style: TextStyle(
+        fontFamily: fontFamily ?? XigoTypography.inter,
+        color: color,
+        fontSize: fontSize,
+        fontWeight: fontWeight,
+        fontStyle: fontStyle ?? FontStyle.normal,
+        letterSpacing: letterSpacing,
+        decoration: decoration ?? TextDecoration.none,
+        overflow: textOverflow,
+        shadows: shadows,
+      ).merge(textStyle),
     );
   }
 }

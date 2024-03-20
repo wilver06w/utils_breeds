@@ -18,13 +18,13 @@ class YuGiOhLoading {
           canPop: false,
           child: Lottie.asset(
             BreedUiValues.loadingAnimations,
-            height: YuGiOhResponsive.heightSizeByContext(
+            height: BreedResponsive.heightSizeByContext(
               context,
-              pixels: ProTiendaSpacing.xs,
+              pixels: BreedSpacing.xs,
             ),
-            width: YuGiOhResponsive.withSizeByContext(
+            width: BreedResponsive.withSizeByContext(
               context,
-              pixels: ProTiendaSpacing.xs,
+              pixels: BreedSpacing.xs,
             ),
           ),
         );

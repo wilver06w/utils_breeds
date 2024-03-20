@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class YuGiOhResponsive {
-  const YuGiOhResponsive._();
+class BreedResponsive {
+  const BreedResponsive._();
   static double _width = 0;
   static double _height = 0;
   static double _resizeHeight = 0;

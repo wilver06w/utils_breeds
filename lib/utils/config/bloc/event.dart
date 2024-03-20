@@ -5,18 +5,6 @@ abstract class Event extends Equatable {
   List<Object> get props => [];
 }
 
-class ChangeClientEvent extends Event {
-  final Client? client;
-
-  ChangeClientEvent(this.client);
-}
-
-class ChangeClienEvent extends Event {
-  final Clien? clien;
-
-  ChangeClienEvent(this.clien);
-}
-
 class ChangeCountryEvent extends Event {
   final Country country;
 

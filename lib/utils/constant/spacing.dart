@@ -5,8 +5,8 @@
 //  ███████║██║·····██║··██║╚██████╗██║██║·╚████║╚██████╔╝
 //  ╚══════╝╚═╝·····╚═╝··╚═╝·╚═════╝╚═╝╚═╝··╚═══╝·╚═════╝·
 
-class ProTiendaSpacing {
-  ProTiendaSpacing._();
+class BreedSpacing {
+  BreedSpacing._();
 
   ///zero = 0
   static const double zero = 0;

@@ -1,16 +1,9 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
 class ProTiendasRoute {
-  static Future<Object?> navDashboard() async {
-    return Modular.to.pushNamedAndRemoveUntil(
-      '/dashboard/',
-      (_) => false,
-    );
-  }
-
   static Future<Object?> navHome() async {
     return Modular.to.pushNamedAndRemoveUntil(
-      '/dashboard/home',
+      '/home/',
       (_) => false,
     );
   }
@@ -53,12 +46,12 @@ class ProTiendasRoute {
   }
 
   static Future<Object?> navDetail({
-    String? product,
+    String? id,
   }) async {
     return Modular.to.pushNamed(
       '/detail',
       arguments: {
-        'product': product,
+        'id': id,
       },
     );
   }

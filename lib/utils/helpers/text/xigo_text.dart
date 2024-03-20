@@ -409,7 +409,7 @@ class XigoTextLarge extends StatelessWidget {
 
   const XigoTextLarge(
     this.label, {
-    Key? key,
+    super.key,
     this.textAlign,
     this.weight,
     this.color,
@@ -418,7 +418,7 @@ class XigoTextLarge extends StatelessWidget {
     this.maxLines,
     this.decoration,
     this.shadows,
-  }) : super(key: key);
+  });
 
   final String label;
   final TextAlign? textAlign;

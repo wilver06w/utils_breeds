@@ -46,13 +46,25 @@ class ProTiendasRoute {
   }
 
   static Future<Object?> navDetail({
-    String? id,
+    DetailParams? detailParams,
   }) async {
     return Modular.to.pushNamed(
       '/detail',
       arguments: {
-        'id': id,
+        'params': detailParams,
       },
     );
   }
+}
+
+class DetailParams {
+  final String id;
+  final String name;
+  final String image;
+
+  DetailParams({
+    required this.id,
+    required this.name,
+    required this.image,
+  });
 }

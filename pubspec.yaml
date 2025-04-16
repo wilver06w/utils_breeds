@@ -24,7 +24,7 @@ dependencies:
   android_id: ^0.3.3
   device_info_plus: ^9.1.1
   styled_text: ^8.1.0
-  shared_preferences: ^2.2.2
+  shared_preferences: ^2.5.3
   collection: ^1.18.0
   equatable: ^2.0.5
   share_me: ^0.0.17
